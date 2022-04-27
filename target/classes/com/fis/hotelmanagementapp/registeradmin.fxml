@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.RegisterAdminController">
+   <children>
+      <Label layoutX="186.0" layoutY="32.0" prefHeight="49.0" prefWidth="306.0" text="Admin Registration">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Label>
+      <TextField fx:id="username" layoutX="237.0" layoutY="122.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter username" />
+      <TextField layoutX="237.0" layoutY="215.0" prefHeight="25.0" prefWidth="203.0" promptText="Re-enter password" />
+      <TextField fx:id="firstName" layoutX="237.0" layoutY="259.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter your first name" />
+      <TextField fx:id="lastName" layoutX="238.0" layoutY="302.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter your last name" />
+      <TextField fx:id="phone" layoutX="238.0" layoutY="348.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter your phone number" />
+      <TextField fx:id="staff" layoutX="237.0" layoutY="392.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter Hotel Staff ID" />
+      <Button fx:id="register" layoutX="304.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleRegisterAdminAction" prefHeight="31.0" prefWidth="71.0" text="Register" />
+      <PasswordField fx:id="password" layoutX="238.0" layoutY="169.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter password" />
+   </children>
+</AnchorPane>
