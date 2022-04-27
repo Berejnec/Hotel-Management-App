@@ -5,6 +5,7 @@ module com.fis.hotelmanagementapp {
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens com.fis.hotelmanagementapp to javafx.fxml;
     exports com.fis.hotelmanagementapp;
