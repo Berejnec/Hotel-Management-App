@@ -25,7 +25,7 @@ public class StartUpController {
 
         loginButton.getScene().getWindow().hide();
         Stage register = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("registerchoose.fxml"));
         Scene scene = new Scene(root);
         register.setScene(scene);
         register.show();
