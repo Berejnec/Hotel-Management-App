@@ -15,6 +15,9 @@ import java.util.ResourceBundle;
 public class StartUpController {
     @FXML
     public Button loginButton;
+
+    @FXML
+    public Button registerButton;
     private DBConnection dbConnection;
 
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -31,7 +34,12 @@ public class StartUpController {
         register.show();
     }
 
-    public void handleLoginButton(ActionEvent event) {
-
+    public void handleLoginButton(ActionEvent event) throws IOException {
+        registerButton.getScene().getWindow().hide();
+        Stage login = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene scene = new Scene(root);
+        login.setScene(scene);
+        login.show();
     }
 }
