@@ -54,20 +54,35 @@ public class LoginController implements Initializable {
             pst.setString(1, username.getText());
             pst.setString(2, password.getText());
             ResultSet rs = pst.executeQuery();
-            int count = 0;
-            while (rs.next()) {
-                count = 1;
-            }
-            if (count == 1) {
-                registerpage.getScene().getWindow().hide();
-                Stage signup = new Stage();
-                Parent root = FXMLLoader.load(getClass().getResource("hotelpage.fxml"));
-                Scene scene = new Scene(root);
-                signup.setScene(scene);
-                signup.show();
+
+            if (rs.next()) {
+
+                if (("" + rs.getString("role")).equals("client")) {
+                    registerpage.getScene().getWindow().hide();
+                    Stage signup = new Stage();
+                    Parent root = FXMLLoader.load(getClass().getResource("hotelpage.fxml"));
+                    Scene scene = new Scene(root);
+                    signup.setScene(scene);
+                    signup.show();
+                } else {
+                    if (("" + rs.getString("role")).equals("admin")) {
+                        registerpage.getScene().getWindow().hide();
+                        Stage signup = new Stage();
+                        Parent root = FXMLLoader.load(getClass().getResource("hotelpageadmin.fxml"));
+                        Scene scene = new Scene(root);
+                        signup.setScene(scene);
+                        signup.show();
+                    }
+                    else {
+                        OptionPane("Username or Password is not Correct", "Error Message");
+                    }
+                }
+
+
             } else {
                 OptionPane("Username or Password is not Correct", "Error Message");
             }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
