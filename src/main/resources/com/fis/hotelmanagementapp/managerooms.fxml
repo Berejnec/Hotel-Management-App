@@ -4,13 +4,24 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="593.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.ManageRoomsController">
    <children>
-      <Label layoutY="14.0" text="Manage Rooms">
+      <Label layoutX="21.0" layoutY="14.0" text="Manage Rooms">
          <font>
             <Font size="31.0" />
          </font>
       </Label>
+      <TableView fx:id="roomTable" layoutX="21.0" layoutY="60.0" prefHeight="243.0" prefWidth="788.0">
+        <columns>
+          <TableColumn fx:id="roomNumber" prefWidth="233.0" text="Room Number" />
+          <TableColumn fx:id="roomType" minWidth="4.0" prefWidth="319.0" text="Room Type" />
+            <TableColumn fx:id="roomStatus" minWidth="0.0" prefWidth="235.0" text="Status" />
+        </columns>
+      </TableView>
+      <TextField fx:id="number" layoutX="21.0" layoutY="368.0" prefHeight="31.0" prefWidth="215.0" />
+      <TextField fx:id="type" layoutX="21.0" layoutY="429.0" prefHeight="31.0" prefWidth="215.0" />
+      <Label layoutX="21.0" layoutY="351.0" text="Room Number" />
+      <Label layoutX="21.0" layoutY="412.0" text="Room Type" />
+      <Button fx:id="addRoomButton" layoutX="89.0" layoutY="491.0" mnemonicParsing="false" onAction="#handleAddRoom" prefHeight="31.0" prefWidth="79.0" text="Add Room" />
    </children>
 </AnchorPane>
