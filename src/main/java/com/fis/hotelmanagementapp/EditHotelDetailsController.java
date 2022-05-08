@@ -69,22 +69,15 @@ public class EditHotelDetailsController implements Initializable {
     }
 
     @FXML
-    public void updateHotelDetails() {
-
-    }
-
-    @FXML
-    public void editHotelDetails(ActionEvent event) throws SQLException {
-        String query = "UPDATE details set parking=?, spa=?, pool=?, food=?, location=?, rooms=? WHERE id=1";
-        connection = dbConnection.getConnection();
-        pst = connection.prepareStatement(query);
-
-        pst.setString(1, parking.getText() + " UPDATE !");
-        pst.setString(2, spa.getText() + " UPDATE !");
-        pst.setString(3, pool.getText() + " UPDATE !");
-        pst.setString(4, food.getText() + " UPDATE !");
-        pst.setString(5, location.getText() + " UPDATE !");
-        pst.setString(6, rooms.getText() + " UPDATE !");
+    public void updateHotelDetails() throws SQLException {
+        String updateQuery = "UPDATE details set parking=?, spa=?, pool=?, food=?, location=?, rooms=? WHERE id=1";
+        pst = connection.prepareStatement(updateQuery);
+        pst.setString(1, parking.getText());
+        pst.setString(2, spa.getText());
+        pst.setString(3, pool.getText());
+        pst.setString(4, food.getText());
+        pst.setString(5, location.getText());
+        pst.setString(6, rooms.getText());
         pst.executeUpdate();
     }
 }
