@@ -2,10 +2,25 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="449.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.ViewHotelDetailsController">
    <children>
-      <Label layoutX="272.0" layoutY="52.0" text="Details" />
+      <Label layoutX="35.0" layoutY="30.0" prefHeight="34.0" prefWidth="151.0" text="Hotel Details">
+         <font>
+            <Font name="System Bold" size="23.0" />
+         </font></Label>
+      <Label fx:id="parkingDetails" layoutX="97.0" layoutY="109.0" prefHeight="34.0" prefWidth="521.0" />
+      <Label fx:id="spaDetails" layoutX="97.0" layoutY="157.0" prefHeight="34.0" prefWidth="521.0" />
+      <Label fx:id="poolDetails" layoutX="97.0" layoutY="197.0" prefHeight="34.0" prefWidth="521.0" />
+      <Label fx:id="foodDetails" layoutX="97.0" layoutY="238.0" prefHeight="34.0" prefWidth="521.0" />
+      <Label fx:id="locationDetails" layoutX="97.0" layoutY="281.0" prefHeight="34.0" prefWidth="521.0" />
+      <Label fx:id="roomsDetails" layoutX="97.0" layoutY="325.0" prefHeight="34.0" prefWidth="521.0" />
+      <Label layoutX="21.0" layoutY="118.0" prefHeight="17.0" prefWidth="46.0" text="Parking" />
+      <Label layoutX="23.0" layoutY="166.0" prefHeight="17.0" prefWidth="27.0" text="Spa" />
+      <Label layoutX="16.0" layoutY="351.0" prefHeight="17.0" prefWidth="46.0" text="Rooms" />
+      <Label layoutX="21.0" layoutY="206.0" prefHeight="17.0" prefWidth="36.0" text="Pool" />
+      <Label layoutX="21.0" layoutY="264.0" prefHeight="17.0" prefWidth="36.0" text="Food" />
+      <Label layoutX="16.0" layoutY="307.0" prefHeight="17.0" prefWidth="46.0" text="Location" />
    </children>
 </AnchorPane>
