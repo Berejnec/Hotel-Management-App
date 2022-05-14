@@ -23,6 +23,9 @@ public class RegisterClientController implements Initializable {
     private PasswordField password;
 
     @FXML
+    private PasswordField reenterPassword;
+
+    @FXML
     private TextField firstName;
 
     @FXML
@@ -39,12 +42,14 @@ public class RegisterClientController implements Initializable {
     public void handleRegisterAction(ActionEvent event) {
         String usernameText = username.getText();
         String passwordText = password.getText();
+        String reenterPasswordText = reenterPassword.getText();
         String firstNameText = firstName.getText();
         String lastNameText = lastName.getText();
         String phoneText = phone.getText();
 
         assert usernameText != null;
         assert passwordText != null;
+        assert reenterPasswordText != null;
         assert firstNameText != null;
         assert lastNameText != null;
         assert phoneText != null;
@@ -52,23 +57,27 @@ public class RegisterClientController implements Initializable {
         if(usernameText.equals("") || passwordText.equals("") || firstNameText.equals("") || lastNameText.equals("") || phoneText.equals("")) {
             OptionPane("Every field is required", "Error Message");
         } else {
-            String insert = "INSERT INTO users (firstName, lastName, username, password, phone, role) VALUES (?, ?, ?, ?, ?, 'client')";
-            connection = dbConnection.getConnection();
-            try {
-                preparedStatement = connection.prepareStatement(insert);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-            try {
-                preparedStatement.setString(1, firstNameText);
-                preparedStatement.setString(2, lastNameText);
-                preparedStatement.setString(3, usernameText);
-                preparedStatement.setString(4, passwordText);
-                preparedStatement.setString(5, phoneText);
-                preparedStatement.executeUpdate();
-                OptionPane("Register Done !", "Message");
-            } catch (SQLException e) {
-                e.printStackTrace();
+            if(!passwordText.equals(reenterPasswordText)) {
+                OptionPane("Passwords do not match!", "Error Message");
+            } else {
+                String insert = "INSERT INTO users (firstName, lastName, username, password, phone, role) VALUES (?, ?, ?, ?, ?, 'client')";
+                connection = dbConnection.getConnection();
+                try {
+                    preparedStatement = connection.prepareStatement(insert);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+                try {
+                    preparedStatement.setString(1, firstNameText);
+                    preparedStatement.setString(2, lastNameText);
+                    preparedStatement.setString(3, usernameText);
+                    preparedStatement.setString(4, passwordText);
+                    preparedStatement.setString(5, phoneText);
+                    preparedStatement.executeUpdate();
+                    OptionPane("Register Done !", "Message");
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
