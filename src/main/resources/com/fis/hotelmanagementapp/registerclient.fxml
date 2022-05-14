@@ -12,11 +12,11 @@
          </font>
       </Label>
       <TextField fx:id="username" layoutX="293.0" layoutY="134.0" prefHeight="25.0" prefWidth="225.0" promptText="Enter username" />
-      <TextField layoutX="293.0" layoutY="237.0" prefHeight="25.0" prefWidth="225.0" promptText="Re-enter password" />
       <TextField fx:id="firstName" layoutX="293.0" layoutY="283.0" prefHeight="25.0" prefWidth="225.0" promptText="Enter your first name" />
       <TextField fx:id="lastName" layoutX="293.0" layoutY="328.0" prefHeight="25.0" prefWidth="225.0" promptText="Enter your last name" />
       <TextField fx:id="phone" layoutX="293.0" layoutY="374.0" prefHeight="25.0" prefWidth="225.0" promptText="Enter your phone number" />
       <Button fx:id="register" layoutX="360.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleRegisterAction" prefHeight="36.0" prefWidth="78.0" text="Register" />
       <PasswordField fx:id="password" layoutX="293.0" layoutY="184.0" prefHeight="25.0" prefWidth="225.0" promptText="Enter password" />
+      <PasswordField fx:id="reenterPassword" layoutX="293.0" layoutY="232.0" prefHeight="25.0" prefWidth="225.0" promptText="Re-enter password" />
    </children>
 </AnchorPane>
