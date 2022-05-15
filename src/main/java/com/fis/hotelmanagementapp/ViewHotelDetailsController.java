@@ -38,9 +38,9 @@ public class ViewHotelDetailsController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
         connection = dbConnection.getConnection();
-        String query = "SELECT parking, spa, pool, food, location, rooms  FROM details WHERE id=1";
-        try (Statement stmt = connection.createStatement()) {
-            ResultSet rs = stmt.executeQuery(query);
+        String getDetailQuery = "SELECT parking, spa, pool, food, location, rooms  FROM details WHERE id=1";
+        try (Statement statement = connection.createStatement()) {
+            ResultSet rs = statement.executeQuery(getDetailQuery);
             while(rs.next()) {
                 String parking_text = rs.getString("parking");
                 String spa_text = rs.getString("spa");

@@ -10,17 +10,17 @@
          <font>
             <Font name="System Bold" size="23.0" />
          </font></Label>
-      <Label fx:id="parkingDetails" layoutX="97.0" layoutY="109.0" prefHeight="34.0" prefWidth="521.0" />
-      <Label fx:id="spaDetails" layoutX="97.0" layoutY="157.0" prefHeight="34.0" prefWidth="521.0" />
-      <Label fx:id="poolDetails" layoutX="97.0" layoutY="197.0" prefHeight="34.0" prefWidth="521.0" />
-      <Label fx:id="foodDetails" layoutX="97.0" layoutY="238.0" prefHeight="34.0" prefWidth="521.0" />
-      <Label fx:id="locationDetails" layoutX="97.0" layoutY="281.0" prefHeight="34.0" prefWidth="521.0" />
-      <Label fx:id="roomsDetails" layoutX="97.0" layoutY="325.0" prefHeight="34.0" prefWidth="521.0" />
+      <Label fx:id="parkingDetails" layoutX="97.0" layoutY="109.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
+      <Label fx:id="spaDetails" layoutX="97.0" layoutY="157.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
+      <Label fx:id="poolDetails" layoutX="97.0" layoutY="197.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="#fffefe" />
+      <Label fx:id="foodDetails" layoutX="97.0" layoutY="238.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
+      <Label fx:id="locationDetails" layoutX="97.0" layoutY="281.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="#fcfcfc" />
+      <Label fx:id="roomsDetails" layoutX="97.0" layoutY="325.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
       <Label layoutX="21.0" layoutY="118.0" prefHeight="17.0" prefWidth="46.0" text="Parking" />
       <Label layoutX="23.0" layoutY="166.0" prefHeight="17.0" prefWidth="27.0" text="Spa" />
-      <Label layoutX="16.0" layoutY="351.0" prefHeight="17.0" prefWidth="46.0" text="Rooms" />
+      <Label layoutX="16.0" layoutY="333.0" prefHeight="17.0" prefWidth="46.0" text="Rooms" />
       <Label layoutX="21.0" layoutY="206.0" prefHeight="17.0" prefWidth="36.0" text="Pool" />
-      <Label layoutX="21.0" layoutY="264.0" prefHeight="17.0" prefWidth="36.0" text="Food" />
-      <Label layoutX="16.0" layoutY="307.0" prefHeight="17.0" prefWidth="46.0" text="Location" />
+      <Label layoutX="17.0" layoutY="246.0" prefHeight="17.0" prefWidth="36.0" text="Food" />
+      <Label layoutX="16.0" layoutY="289.0" prefHeight="17.0" prefWidth="46.0" text="Location" />
    </children>
 </AnchorPane>
