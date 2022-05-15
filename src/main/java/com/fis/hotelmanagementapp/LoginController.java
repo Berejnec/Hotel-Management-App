@@ -13,7 +13,11 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -45,14 +49,29 @@ public class LoginController implements Initializable {
         dbConnection = new DBConnection();
     }
 
+    public static byte[] getSHA(String input) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        return md.digest(input.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static String hexToString(byte[] hash) {
+        BigInteger number = new BigInteger(1, hash);
+        StringBuilder hexString = new StringBuilder(number.toString(16));
+        while (hexString.length() < 32) {
+            hexString.insert(0, '0');
+        }
+        return hexString.toString();
+    }
+
     @FXML
     public void handleLoginAction(javafx.event.ActionEvent actionEvent) throws IOException {
         connection = dbConnection.getConnection();
         String query = "SELECT * FROM users WHERE username=? AND password=?";
         try {
+            String encryptedpassword=hexToString(getSHA(password.getText()));
             pst = connection.prepareStatement(query);
             pst.setString(1, username.getText());
-            pst.setString(2, password.getText());
+            pst.setString(2, encryptedpassword);
             ResultSet rs = pst.executeQuery();
 
             if (rs.next()) {
@@ -85,6 +104,8 @@ public class LoginController implements Initializable {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
         }
     }
 
