@@ -2,10 +2,18 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import org.controlsfx.control.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.RateHotelController">
    <children>
-      <Label layoutX="261.0" layoutY="66.0" text="Leave a Rating" />
+      <Label layoutX="47.0" layoutY="34.0" prefHeight="32.0" prefWidth="137.0" text="Leave a Rating">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font></Label>
+      <Rating fx:id="rating" layoutX="212.0" layoutY="168.0" />
+      <Label layoutX="260.0" layoutY="241.0" prefHeight="18.0" prefWidth="78.0" text="Hotel Rating:" />
+      <Label layoutX="184.0" layoutY="290.0" text="Calculating the average rating of the hotel..." />
+      <Label fx:id="stars" layoutX="286.0" layoutY="336.0" />
    </children>
 </AnchorPane>
