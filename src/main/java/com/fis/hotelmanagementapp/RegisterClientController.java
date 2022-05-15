@@ -8,7 +8,11 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.StageStyle;
 
+import java.math.BigInteger;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -38,11 +42,27 @@ public class RegisterClientController implements Initializable {
     private Connection connection;
     private PreparedStatement preparedStatement;
 
+    public static byte[] getSHA(String input) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("SHA-256");
+        return md.digest(input.getBytes(StandardCharsets.UTF_8));
+    }
+
+    public static String hexToString(byte[] hash) {
+        BigInteger number = new BigInteger(1, hash);
+        StringBuilder hexString = new StringBuilder(number.toString(16));
+        while (hexString.length() < 32) {
+            hexString.insert(0, '0');
+        }
+        return hexString.toString();
+    }
+
     @FXML
-    public void handleRegisterAction(ActionEvent event) {
+    public void handleRegisterAction(ActionEvent event) throws NoSuchAlgorithmException {
         String usernameText = username.getText();
         String passwordText = password.getText();
+        String encrypted = hexToString(getSHA(passwordText));
         String reenterPasswordText = reenterPassword.getText();
+        String encrypted2 = hexToString(getSHA(reenterPasswordText));
         String firstNameText = firstName.getText();
         String lastNameText = lastName.getText();
         String phoneText = phone.getText();
@@ -54,10 +74,10 @@ public class RegisterClientController implements Initializable {
         assert lastNameText != null;
         assert phoneText != null;
 
-        if(usernameText.equals("") || passwordText.equals("") || firstNameText.equals("") || lastNameText.equals("") || phoneText.equals("")) {
+        if(usernameText.equals("") || encrypted.equals("") || firstNameText.equals("") || lastNameText.equals("") || phoneText.equals("")) {
             OptionPane("Every field is required", "Error Message");
         } else {
-            if(!passwordText.equals(reenterPasswordText)) {
+            if(!encrypted.equals(encrypted2)) {
                 OptionPane("Passwords do not match!", "Error Message");
             } else {
                 String insert = "INSERT INTO users (firstName, lastName, username, password, phone, role) VALUES (?, ?, ?, ?, ?, 'client')";
@@ -71,7 +91,7 @@ public class RegisterClientController implements Initializable {
                     preparedStatement.setString(1, firstNameText);
                     preparedStatement.setString(2, lastNameText);
                     preparedStatement.setString(3, usernameText);
-                    preparedStatement.setString(4, passwordText);
+                    preparedStatement.setString(4, encrypted);
                     preparedStatement.setString(5, phoneText);
                     preparedStatement.executeUpdate();
                     OptionPane("Register Done !", "Message");
