@@ -5,11 +5,9 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -49,6 +47,12 @@ public class ManageRoomsController implements Initializable {
 
     @FXML
     private TextField type;
+
+    @FXML
+    private TextField deleteNumber;
+
+    @FXML
+    private Button deleteButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -99,5 +103,19 @@ public class ManageRoomsController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+
+    @FXML
+    public void handleDeleteRoom(ActionEvent event) throws SQLException {
+        String deleteQuery = "DELETE FROM rooms WHERE roomNumber=?";
+        try {
+            pst = connection.prepareStatement(deleteQuery);
+            pst.setString(1, deleteNumber.getText());
+            pst.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        initializeRooms();
     }
 }
