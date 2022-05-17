@@ -24,12 +24,12 @@
             <Label fx:id="email" layoutX="20.0" layoutY="158.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
             <Label fx:id="roomType" layoutX="20.0" layoutY="188.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
             <Label fx:id="persons" layoutX="20.0" layoutY="218.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
-            <TextField alignment="TOP_CENTER" layoutX="20.0" layoutY="261.0" prefHeight="57.0" prefWidth="169.0" promptText="More informations for the client...">
+            <TextField fx:id="adminMessage" alignment="TOP_CENTER" layoutX="20.0" layoutY="261.0" prefHeight="57.0" prefWidth="169.0" promptText="More informations for the client...">
                <font>
                   <Font size="9.0" />
                </font>
             </TextField>
-            <Button layoutX="20.0" layoutY="334.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0" text="Confirm" />
+            <Button layoutX="20.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleConfirmRequest" prefHeight="30.0" prefWidth="66.0" text="Confirm" />
             <Button layoutX="123.0" layoutY="334.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0" text="Decline" />
             <Button layoutX="40.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleLoadRequest" prefHeight="38.0" prefWidth="129.0" text="Load Latest Request" />
          </children>
