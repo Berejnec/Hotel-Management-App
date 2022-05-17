@@ -50,7 +50,7 @@ public class ReservationRequestsController implements Initializable {
 
     @FXML
     public void handleLoadRequest(ActionEvent event) throws SQLException {
-        String lastLowRequestQuery = "SELECT id, firstName, lastName, cnp, email, roomType, persons FROM requests WHERE id=(SELECT MAX(id) FROM requests) AND confirmed='Not Confirmed'";
+        String lastLowRequestQuery = "SELECT id, firstName, lastName, cnp, email, roomType, persons FROM requests WHERE confirmed='Not Confirmed'";
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(lastLowRequestQuery);
             if(!resultSet.next()) {
@@ -79,12 +79,22 @@ public class ReservationRequestsController implements Initializable {
 
     @FXML
     public void handleConfirmRequest(ActionEvent event) throws SQLException {
-        String confirmedRequestQuery = "UPDATE requests SET confirmed='Confirmed', adminMessage=?";
+        String confirmedRequestQuery = "UPDATE requests SET confirmed='Confirmed', adminMessage=? WHERE id=?";
         String adminMessage_text = adminMessage.getText();
         pst = connection.prepareStatement(confirmedRequestQuery);
         pst.setString(1, adminMessage_text);
+        pst.setString(2, id.getText());
         pst.executeUpdate();
         OptionPane("Reservation confirmed successfully!", "Reservation Message");
+    }
+
+    @FXML
+    public void handleDeclineRequest(ActionEvent event) throws SQLException {
+        String deleteRequestQuery = "DELETE FROM requests WHERE id=?";
+        pst = connection.prepareStatement(deleteRequestQuery);
+        pst.setString(1, id.getText());
+        pst.executeUpdate();
+        OptionPane("Reservation declined!", "Message");
     }
 
     private void OptionPane(String message, String title) {
