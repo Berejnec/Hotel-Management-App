@@ -4,13 +4,35 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="492.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.ReservationRequestsController">
    <children>
-      <Label layoutX="14.0" layoutY="14.0" prefHeight="34.0" prefWidth="225.0" text="Reservation Requests">
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="38.0" prefWidth="243.0" text="Reservation Requests">
          <font>
-            <Font size="23.0" />
+            <Font name="System Bold" size="23.0" />
          </font>
       </Label>
+      <AnchorPane layoutX="263.0" layoutY="33.0" prefHeight="468.0" prefWidth="218.0">
+         <children>
+            <Label layoutX="22.0" layoutY="12.0" prefHeight="17.0" prefWidth="169.0" text="Reservation Request Details">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label fx:id="id" layoutX="20.0" layoutY="38.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_WORD_ELLIPSIS" />
+            <Label fx:id="firstName" layoutX="20.0" layoutY="68.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
+            <Label fx:id="lastName" layoutX="20.0" layoutY="98.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
+            <Label fx:id="cnp" layoutX="20.0" layoutY="128.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
+            <Label fx:id="email" layoutX="20.0" layoutY="158.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
+            <Label fx:id="roomType" layoutX="20.0" layoutY="188.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
+            <Label fx:id="persons" layoutX="20.0" layoutY="218.0" prefHeight="30.0" prefWidth="169.0" style="-fx-background-color: black;" textFill="WHITE" />
+            <TextField fx:id="adminMessage" alignment="TOP_CENTER" layoutX="20.0" layoutY="261.0" prefHeight="57.0" prefWidth="169.0" promptText="More informations for the client...">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </TextField>
+            <Button layoutX="20.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleConfirmRequest" prefHeight="30.0" prefWidth="66.0" text="Confirm" />
+            <Button layoutX="123.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleDeclineRequest" prefHeight="30.0" prefWidth="66.0" text="Decline" />
+            <Button layoutX="40.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleLoadRequest" prefHeight="38.0" prefWidth="129.0" text="Load Latest Request" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
