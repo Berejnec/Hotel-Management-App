@@ -30,7 +30,7 @@
                </font>
             </TextField>
             <Button layoutX="20.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleConfirmRequest" prefHeight="30.0" prefWidth="66.0" text="Confirm" />
-            <Button layoutX="123.0" layoutY="334.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="66.0" text="Decline" />
+            <Button layoutX="123.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleDeclineRequest" prefHeight="30.0" prefWidth="66.0" text="Decline" />
             <Button layoutX="40.0" layoutY="398.0" mnemonicParsing="false" onAction="#handleLoadRequest" prefHeight="38.0" prefWidth="129.0" text="Load Latest Request" />
          </children>
       </AnchorPane>
