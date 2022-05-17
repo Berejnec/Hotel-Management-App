@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.sql.*;
@@ -34,6 +35,9 @@ public class ReservationRequestsController implements Initializable {
     @FXML
     private Label persons;
 
+    @FXML
+    private TextField adminMessage;
+
     private Connection connection;
 
     private DBConnection dbConnection;
@@ -48,7 +52,7 @@ public class ReservationRequestsController implements Initializable {
 
     @FXML
     public void handleLoadRequest(ActionEvent event) throws SQLException {
-        String lastLowRequestQuery = "SELECT id, firstName, lastName, cnp, email, roomType, persons FROM requests WHERE id=(SELECT MAX(id) FROM requests)";
+        String lastLowRequestQuery = "SELECT id, firstName, lastName, cnp, email, roomType, persons FROM requests WHERE id=(SELECT MAX(id) FROM requests) AND confirmed='Not Confirmed'";
         try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery(lastLowRequestQuery);
             while(resultSet.next()) {
@@ -69,6 +73,15 @@ public class ReservationRequestsController implements Initializable {
                 persons.setText(persons_text);
             }
         }
+    }
+
+    @FXML
+    public void handleConfirmRequest(ActionEvent event) throws SQLException {
+        String confirmedRequestQuery = "UPDATE requests SET confirmed='Confirmed', adminMessage=?";
+        String adminMessage_text = adminMessage.getText();
+        pst = connection.prepareStatement(confirmedRequestQuery);
+        pst.setString(1, adminMessage_text);
+        pst.executeUpdate();
     }
 
 
