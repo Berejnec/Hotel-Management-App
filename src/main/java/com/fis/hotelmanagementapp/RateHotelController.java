@@ -36,7 +36,7 @@ public class RateHotelController implements Initializable {
             public void changed(ObservableValue<? extends Number> observableValue, Number number, Number t1) {
 
                 String rateQuery = "INSERT INTO rating (rate) VALUES (?)";
-                String averageQuery = "SELECT AVG(rate) from rating";
+                String averageQuery = "SELECT ROUND(AVG(rate), 2) from rating";
 
                 try {
                     pst = connection.prepareStatement(rateQuery);
