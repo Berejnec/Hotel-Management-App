@@ -1,23 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="677.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.RegisterAdminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="527.0" prefWidth="709.0" style="-fx-background-color: #e0aaff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.RegisterAdminController">
    <children>
-      <Label layoutX="186.0" layoutY="32.0" prefHeight="49.0" prefWidth="306.0" text="Admin Registration">
+      <Label layoutX="182.0" layoutY="33.0" prefHeight="49.0" prefWidth="364.0" text="Admin Registration" textFill="#620786">
          <font>
-            <Font name="System Bold" size="33.0" />
+            <Font name="Eras Bold ITC" size="35.0" />
          </font>
       </Label>
-      <TextField fx:id="username" layoutX="237.0" layoutY="122.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter username" />
-      <TextField fx:id="firstName" layoutX="237.0" layoutY="259.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter your first name" />
-      <TextField fx:id="lastName" layoutX="238.0" layoutY="302.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter your last name" />
-      <TextField fx:id="phone" layoutX="238.0" layoutY="348.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter your phone number" />
-      <TextField fx:id="staff" layoutX="237.0" layoutY="392.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter Hotel Staff ID" />
-      <Button fx:id="register" layoutX="304.0" layoutY="428.0" mnemonicParsing="false" onAction="#handleRegisterAdminAction" prefHeight="31.0" prefWidth="71.0" text="Register" />
-      <PasswordField fx:id="password" layoutX="238.0" layoutY="169.0" prefHeight="25.0" prefWidth="203.0" promptText="Enter password" />
-      <PasswordField fx:id="reenterPassword" layoutX="238.0" layoutY="215.0" prefHeight="25.0" prefWidth="203.0" promptText="Re-enter password" />
+      <TextField fx:id="username" layoutX="254.0" layoutY="122.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter username" />
+      <TextField fx:id="firstName" layoutX="254.0" layoutY="264.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter your first name" />
+      <TextField fx:id="lastName" layoutX="254.0" layoutY="310.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter your last name" />
+      <TextField fx:id="phone" layoutX="254.0" layoutY="354.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter your phone number" />
+      <TextField fx:id="staff" layoutX="254.0" layoutY="401.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter Hotel Staff ID" />
+      <Button fx:id="register" layoutX="314.0" layoutY="465.0" mnemonicParsing="false" onAction="#handleRegisterAdminAction" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Register" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <PasswordField fx:id="password" layoutX="254.0" layoutY="169.0" prefHeight="38.0" prefWidth="211.0" promptText="Enter password" />
+      <PasswordField fx:id="reenterPassword" layoutX="253.0" layoutY="216.0" prefHeight="38.0" prefWidth="211.0" promptText="Re-enter password" />
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="199.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="199.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/key.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="199.0" layoutY="216.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/key%20(1).png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="199.0" layoutY="264.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/profile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="199.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/profile.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="199.0" layoutY="354.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/telephone.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="38.0" fitWidth="40.0" layoutX="205.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/icons8-hashtag-48.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
