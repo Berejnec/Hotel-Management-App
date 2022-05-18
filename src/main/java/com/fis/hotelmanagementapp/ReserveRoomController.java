@@ -4,14 +4,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.StageStyle;
 
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ReserveRoomController implements Initializable {
@@ -33,6 +31,12 @@ public class ReserveRoomController implements Initializable {
 
     @FXML
     private ComboBox<String> roomType;
+
+    @FXML
+    private TextField cnp_check;
+
+    @FXML
+    private Label admin_message;
 
     private PreparedStatement pst;
     private Connection connection;
@@ -95,6 +99,20 @@ public class ReserveRoomController implements Initializable {
             OptionPane("Room Reservation Request Succeed", "Message");
         }
 
+    }
+    @FXML
+    public void handleCheckStatus(javafx.event.ActionEvent actionEvent) throws SQLException {
+        String checkQuery="SELECT adminMessage FROM requests WHERE cnp=?";
+        String cnp_check_text=cnp_check.getText();
+        pst=connection.prepareStatement(checkQuery);
+        pst.setString(1,cnp_check_text);
+        ResultSet rs=pst.executeQuery();
+        if(rs.next()){
+          String message=rs.getString("adminMessage");
+          admin_message.setText(message);
+        }else {
+            OptionPane("Reservation does not exist or it was declined", "Status Message");
+        }
     }
 
     private void OptionPane(String message, String title) {
