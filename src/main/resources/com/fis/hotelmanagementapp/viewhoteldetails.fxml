@@ -1,26 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="449.0" prefWidth="666.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.ViewHotelDetailsController">
+<AnchorPane prefHeight="449.0" prefWidth="666.0" style="-fx-background-color: #e0aaff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.ViewHotelDetailsController">
    <children>
-      <Label layoutX="35.0" layoutY="30.0" prefHeight="34.0" prefWidth="151.0" text="Hotel Details">
+      <Label layoutX="35.0" layoutY="30.0" prefHeight="42.0" prefWidth="245.0" text="Hotel Details" textFill="#620786">
          <font>
-            <Font name="System Bold" size="23.0" />
+            <Font name="Eras Bold ITC" size="35.0" />
          </font></Label>
-      <Label fx:id="parkingDetails" layoutX="97.0" layoutY="109.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
-      <Label fx:id="spaDetails" layoutX="97.0" layoutY="157.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
-      <Label fx:id="poolDetails" layoutX="97.0" layoutY="197.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="#fffefe" />
-      <Label fx:id="foodDetails" layoutX="97.0" layoutY="238.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
-      <Label fx:id="locationDetails" layoutX="97.0" layoutY="281.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="#fcfcfc" />
-      <Label fx:id="roomsDetails" layoutX="97.0" layoutY="325.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
-      <Label layoutX="21.0" layoutY="118.0" prefHeight="17.0" prefWidth="46.0" text="Parking" />
-      <Label layoutX="23.0" layoutY="166.0" prefHeight="17.0" prefWidth="27.0" text="Spa" />
-      <Label layoutX="16.0" layoutY="333.0" prefHeight="17.0" prefWidth="46.0" text="Rooms" />
-      <Label layoutX="21.0" layoutY="206.0" prefHeight="17.0" prefWidth="36.0" text="Pool" />
-      <Label layoutX="17.0" layoutY="246.0" prefHeight="17.0" prefWidth="36.0" text="Food" />
-      <Label layoutX="16.0" layoutY="289.0" prefHeight="17.0" prefWidth="46.0" text="Location" />
+      <Label fx:id="parkingDetails" layoutX="97.0" layoutY="110.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
+      <Label fx:id="spaDetails" layoutX="97.0" layoutY="149.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
+      <Label fx:id="poolDetails" layoutX="97.0" layoutY="189.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="#fffefe" />
+      <Label fx:id="foodDetails" layoutX="97.0" layoutY="229.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
+      <Label fx:id="locationDetails" layoutX="97.0" layoutY="272.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="#fcfcfc" />
+      <Label fx:id="roomsDetails" layoutX="97.0" layoutY="316.0" prefHeight="34.0" prefWidth="521.0" style="-fx-background-color: cyan;" textFill="WHITE" />
+      <Label layoutX="13.0" layoutY="118.0" prefHeight="18.0" prefWidth="70.0" text="Parking" textFill="#620786">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font></Label>
+      <Label layoutX="22.0" layoutY="157.0" prefHeight="18.0" prefWidth="36.0" text="Spa" textFill="#620786">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font></Label>
+      <Label layoutX="13.0" layoutY="324.0" prefHeight="18.0" prefWidth="54.0" text="Rooms" textFill="#620786">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font></Label>
+      <Label layoutX="39.0" layoutY="197.0" prefHeight="17.0" prefWidth="36.0" text="Pool" textFill="#620786">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font></Label>
+      <Label layoutX="12.0" layoutY="237.0" prefHeight="18.0" prefWidth="46.0" text="Food" textFill="#620786">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font></Label>
+      <Label layoutX="5.0" layoutY="280.0" prefHeight="18.0" prefWidth="70.0" text="Location" textFill="#620786">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font></Label>
+      <ImageView fitHeight="52.0" fitWidth="70.0" layoutX="14.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/signage.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="36.0" layoutX="57.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/spa.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="5.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/swimming-pool.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="58.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/food-delivery.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="34.0" fitWidth="28.0" layoutX="69.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/icons8-place-marker-48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="52.0" fitWidth="46.0" layoutX="22.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/icons8-bedroom-48.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
