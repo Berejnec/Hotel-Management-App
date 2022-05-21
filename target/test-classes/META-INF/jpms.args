@@ -1,0 +1,4 @@
+--patch-module
+com.fis.hotelmanagementapp=_
+--add-reads
+com.fis.hotelmanagementapp=ALL-UNNAMED
