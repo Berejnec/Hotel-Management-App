@@ -2,10 +2,15 @@ package com.fis.hotelmanagementapp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -32,6 +37,9 @@ public class ReservationRequestsController implements Initializable {
 
     @FXML
     private Label persons;
+
+    @FXML
+    private Button back_home;
 
     @FXML
     private TextField adminMessage;
@@ -95,6 +103,18 @@ public class ReservationRequestsController implements Initializable {
         pst.setString(1, id.getText());
         pst.executeUpdate();
         OptionPane("Reservation declined!", "Message");
+    }
+
+    @FXML
+    public void handleHomeButton(javafx.event.ActionEvent actionEvent) throws IOException {
+        firstName.getScene().getWindow().hide();
+        Stage home = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("hotelpageadmin.fxml"));
+        Scene scene = new Scene(root);
+        home.setScene(scene);
+        home.show();
+
+
     }
 
     private void OptionPane(String message, String title) {

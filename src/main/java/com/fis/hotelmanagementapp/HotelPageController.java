@@ -57,13 +57,13 @@ public class HotelPageController {
     }
 
     @FXML
-    public void handleLoginButton(javafx.event.ActionEvent actionEvent) throws IOException {
+    public void handleHomeButton(javafx.event.ActionEvent actionEvent) throws IOException {
         reserve.getScene().getWindow().hide();
-        Stage login = new Stage();
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Stage home = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("startup.fxml"));
         Scene scene = new Scene(root);
-        login.setScene(scene);
-        login.show();
+        home.setScene(scene);
+        home.show();
 
 
     }

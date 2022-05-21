@@ -2,12 +2,18 @@ package com.fis.hotelmanagementapp;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.math.BigInteger;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -37,6 +43,9 @@ public class RegisterClientController implements Initializable {
 
     @FXML
     private TextField phone;
+
+    @FXML
+    private Button back_home;
 
     private DBConnection dbConnection;
     private Connection connection;
@@ -105,6 +114,18 @@ public class RegisterClientController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
+    }
+
+    @FXML
+    public void handleHomeButton(javafx.event.ActionEvent actionEvent) throws IOException {
+        username.getScene().getWindow().hide();
+        Stage home = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("startup.fxml"));
+        Scene scene = new Scene(root);
+        home.setScene(scene);
+        home.show();
+
+
     }
 
     private void OptionPane(String message, String title) {
