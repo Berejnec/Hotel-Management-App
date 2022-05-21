@@ -50,6 +50,8 @@ public class ReservationRequestsController implements Initializable {
 
     private PreparedStatement pst;
 
+    private PreparedStatement pst2;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
@@ -89,10 +91,15 @@ public class ReservationRequestsController implements Initializable {
     public void handleConfirmRequest(ActionEvent event) throws SQLException {
         String confirmedRequestQuery = "UPDATE requests SET confirmed='Confirmed', adminMessage=? WHERE id=?";
         String adminMessage_text = adminMessage.getText();
+        String updateStatusQuery = "UPDATE rooms SET roomStatus='Booked' WHERE roomType=? LIMIT 1";
+        String roomTypeText = roomType.getText();
+        pst2 = connection.prepareStatement(updateStatusQuery);
+        pst2.setString(1, roomTypeText);
         pst = connection.prepareStatement(confirmedRequestQuery);
         pst.setString(1, adminMessage_text);
         pst.setString(2, id.getText());
         pst.executeUpdate();
+        pst2.executeUpdate();
         OptionPane("Reservation confirmed successfully!", "Reservation Message");
     }
 
