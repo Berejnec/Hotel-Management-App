@@ -7,9 +7,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.controlsfx.control.Rating;
 
 import java.io.IOException;
@@ -64,8 +66,10 @@ public class RateHotelController implements Initializable {
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }
+                OptionPane("Thank you for rating our hotel!","Rating Message");
             }
         });
+
     }
 
     @FXML
@@ -78,6 +82,15 @@ public class RateHotelController implements Initializable {
         home.show();
 
 
+    }
+
+    private void OptionPane(String message, String title) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.initStyle(StageStyle.UTILITY);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
     }
 
 }

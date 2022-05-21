@@ -24,7 +24,7 @@
          <font>
             <Font name="Eras Bold ITC" size="15.0" />
          </font></Label>
-      <Label fx:id="stars" layoutX="296.0" layoutY="335.0" prefHeight="18.0" prefWidth="8.0">
+      <Label fx:id="stars" layoutX="291.0" layoutY="335.0" prefHeight="18.0" prefWidth="46.0" text="4.23">
          <font>
             <Font name="Eras Bold ITC" size="15.0" />
          </font></Label>
@@ -40,5 +40,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <ImageView fitHeight="42.0" fitWidth="54.0" layoutX="240.0" layoutY="323.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icons/star.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
