@@ -44,26 +44,26 @@
             <Font name="Eras Bold ITC" size="15.0" />
          </font></TextField>
       <ComboBox fx:id="roomType" layoutX="124.0" layoutY="267.0" prefWidth="150.0" promptText="Select Room Type" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" />
-      <Label layoutX="484.0" layoutY="143.0" text="Reservation Status">
+      <Label layoutX="483.0" layoutY="187.0" text="Reservation Status">
          <font>
             <Font name="Eras Bold ITC" size="15.0" />
          </font></Label>
-      <TextField fx:id="cnp_check" layoutX="445.0" layoutY="196.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;">
+      <TextField fx:id="cnp_check" layoutX="445.0" layoutY="256.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;">
          <font>
             <Font name="Eras Bold ITC" size="15.0" />
          </font></TextField>
-      <Label layoutX="418.0" layoutY="172.0" text="Enter your CNP to see your reservation status">
+      <Label layoutX="417.0" layoutY="226.0" text="Enter your CNP to see your reservation status">
          <font>
             <Font name="Eras Bold ITC" size="12.0" />
          </font></Label>
-      <Button layoutX="519.0" layoutY="266.0" mnemonicParsing="false" onAction="#handleCheckStatus" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Check" textFill="WHITE">
+      <Button layoutX="519.0" layoutY="315.0" mnemonicParsing="false" onAction="#handleCheckStatus" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Check" textFill="WHITE">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
          <font>
             <Font name="Eras Bold ITC" size="15.0" />
          </font></Button>
-      <Label fx:id="admin_message" layoutX="452.0" layoutY="319.0" prefHeight="26.0" prefWidth="262.0">
+      <Label fx:id="admin_message" layoutX="424.0" layoutY="374.0" prefHeight="26.0" prefWidth="262.0">
          <font>
             <Font name="Eras Bold ITC" size="15.0" />
          </font></Label>
@@ -97,10 +97,22 @@
             <Image url="@../../../icons/family.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="87.0" fitWidth="79.0" layoutX="516.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="87.0" fitWidth="79.0" layoutX="516.0" layoutY="88.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../icons/check-list.png" />
          </image>
       </ImageView>
+      <Button fx:id="back_home" layoutX="645.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="66.0" prefWidth="62.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;">
+         <graphic>
+            <ImageView fitHeight="63.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/home-button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

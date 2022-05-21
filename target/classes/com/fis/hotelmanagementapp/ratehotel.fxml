@@ -1,19 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import org.controlsfx.control.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import org.controlsfx.control.Rating?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.RateHotelController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #e0aaff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.RateHotelController">
    <children>
-      <Label layoutX="47.0" layoutY="34.0" prefHeight="32.0" prefWidth="137.0" text="Leave a Rating">
+      <Label layoutX="29.0" layoutY="36.0" prefHeight="42.0" prefWidth="270.0" text="Leave a Rating" textFill="#620786">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Eras Bold ITC" size="35.0" />
          </font></Label>
       <Rating fx:id="rating" layoutX="212.0" layoutY="168.0" />
       <Label layoutX="260.0" layoutY="241.0" prefHeight="18.0" prefWidth="78.0" text="Hotel Rating:" />
       <Label layoutX="184.0" layoutY="290.0" text="Calculating the average rating of the hotel..." />
       <Label fx:id="stars" layoutX="286.0" layoutY="336.0" />
+      <Button fx:id="back_home" layoutX="500.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="62.0" prefWidth="78.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;">
+         <graphic>
+            <ImageView fitHeight="55.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/home-button.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>
