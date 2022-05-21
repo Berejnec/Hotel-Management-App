@@ -61,5 +61,17 @@
             <Image url="@../../../icons/icons8-reservation-64.png" />
          </image>
       </ImageView>
+      <Button fx:id="back_home" layoutX="636.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleHomeButton" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;">
+         <graphic>
+            <ImageView fitHeight="58.0" fitWidth="77.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/exit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

@@ -61,5 +61,17 @@
             <Image url="@../../../icons/profile.png" />
          </image>
       </ImageView>
+      <Button fx:id="back_home" layoutX="679.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="74.0" prefWidth="81.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;">
+         <graphic>
+            <ImageView fitHeight="48.0" fitWidth="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/exit.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

@@ -4,11 +4,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import org.w3c.dom.Text;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -54,6 +59,9 @@ public class ManageRoomsController implements Initializable {
     @FXML
     private Button deleteButton;
 
+    @FXML
+    private Button back_home;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         dbConnection = new DBConnection();
@@ -87,6 +95,8 @@ public class ManageRoomsController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+
     }
 
     @FXML
@@ -117,5 +127,17 @@ public class ManageRoomsController implements Initializable {
             e.printStackTrace();
         }
         initializeRooms();
+    }
+
+    @FXML
+    public void handleHomeButton(javafx.event.ActionEvent actionEvent) throws IOException {
+        roomTable.getScene().getWindow().hide();
+        Stage home = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("hotelpageadmin.fxml"));
+        Scene scene = new Scene(root);
+        home.setScene(scene);
+        home.show();
+
+
     }
 }

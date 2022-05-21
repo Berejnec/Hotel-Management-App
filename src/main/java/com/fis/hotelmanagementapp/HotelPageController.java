@@ -24,6 +24,9 @@ public class HotelPageController {
     private Button rate;
 
     @FXML
+    private Button back_login;
+
+    @FXML
     public void handleViewHotelDetailsButton(ActionEvent event) throws IOException {
         reserve.getScene().getWindow().hide();
         Stage hotelStage = new Stage();
@@ -51,6 +54,18 @@ public class HotelPageController {
         Scene scene = new Scene(root);
         hotelStage.setScene(scene);
         hotelStage.show();
+    }
+
+    @FXML
+    public void handleHomeButton(javafx.event.ActionEvent actionEvent) throws IOException {
+        reserve.getScene().getWindow().hide();
+        Stage home = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("startup.fxml"));
+        Scene scene = new Scene(root);
+        home.setScene(scene);
+        home.show();
+
+
     }
 
 }

@@ -96,5 +96,17 @@
             <Image url="@../../../icons/icons8-bedroom-48.png" />
          </image>
       </ImageView>
+      <Button fx:id="back_home" layoutX="774.0" layoutY="25.0" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="55.0" prefWidth="79.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;">
+         <graphic>
+            <ImageView fitHeight="54.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../icons/enter.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

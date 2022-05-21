@@ -22,6 +22,9 @@ public class HotelPageAdminController {
     private Button reservationRequests;
 
     @FXML
+    private Button back_home;
+
+    @FXML
     public void handleHotelDetailsButton(ActionEvent event) throws IOException {
         manageRooms.getScene().getWindow().hide();
         Stage hotelStage = new Stage();
@@ -49,6 +52,18 @@ public class HotelPageAdminController {
         Scene scene = new Scene(root);
         requests.setScene(scene);
         requests.show();
+    }
+
+    @FXML
+    public void handleHomeButton(javafx.event.ActionEvent actionEvent) throws IOException {
+        hotelDetails.getScene().getWindow().hide();
+        Stage home = new Stage();
+        Parent root = FXMLLoader.load(getClass().getResource("startup.fxml"));
+        Scene scene = new Scene(root);
+        home.setScene(scene);
+        home.show();
+
+
     }
 
 }
