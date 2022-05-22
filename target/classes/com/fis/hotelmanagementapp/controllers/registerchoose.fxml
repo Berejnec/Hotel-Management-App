@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="721.0" style="-fx-background-color: #e0aaff;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fis.hotelmanagementapp.controllers.RegisterChooseController">
+   <children>
+      <Button fx:id="clientButton" layoutX="130.0" layoutY="273.0" mnemonicParsing="false" onAction="#onClientChoose" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: #b8d0eb; -fx-border-radius: 5px; -fx-border-width: 3px; -fx-border-color: black;" text="Client" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="adminButton" layoutX="506.0" layoutY="273.0" mnemonicParsing="false" onAction="#onAdminChoose" prefHeight="50.0" prefWidth="110.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Admin" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="68.0" layoutY="72.0" prefHeight="43.0" prefWidth="586.0" text="Choose the role you want to register as" textFill="#620786">
+         <font>
+            <Font name="Eras Bold ITC" size="29.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="108.0" fitWidth="110.0" layoutX="131.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../icons/client.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="108.0" fitWidth="110.0" layoutX="507.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../icons/profile.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

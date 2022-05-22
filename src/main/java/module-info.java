@@ -10,4 +10,10 @@ module com.fis.hotelmanagementapp {
 
     opens com.fis.hotelmanagementapp to javafx.fxml;
     exports com.fis.hotelmanagementapp;
+    exports com.fis.hotelmanagementapp.controllers;
+    opens com.fis.hotelmanagementapp.controllers to javafx.fxml;
+    exports com.fis.hotelmanagementapp.services;
+    opens com.fis.hotelmanagementapp.services to javafx.fxml;
+    exports com.fis.hotelmanagementapp.models;
+    opens com.fis.hotelmanagementapp.models to javafx.fxml;
 }
