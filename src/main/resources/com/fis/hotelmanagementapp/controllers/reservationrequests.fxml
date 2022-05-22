@@ -55,21 +55,21 @@
                   <Font size="10.0" />
                </font>
             </TextField>
-            <Button layoutY="334.0" mnemonicParsing="false" onAction="#handleConfirmRequest" prefHeight="34.0" prefWidth="88.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Confirm" textFill="WHITE">
+            <Button fx:id="confirm" layoutY="334.0" mnemonicParsing="false" onAction="#handleConfirmRequest" prefHeight="34.0" prefWidth="88.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Confirm" textFill="WHITE">
                <font>
                   <Font name="Eras Bold ITC" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutX="123.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleDeclineRequest" prefHeight="34.0" prefWidth="88.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Decline" textFill="WHITE">
+            <Button fx:id="decline" layoutX="123.0" layoutY="334.0" mnemonicParsing="false" onAction="#handleDeclineRequest" prefHeight="34.0" prefWidth="88.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Decline" textFill="WHITE">
                <font>
                   <Font name="Eras Bold ITC" size="15.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor></Button>
-            <Button layoutX="14.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleLoadRequest" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Load Latest Request" textFill="WHITE">
+            <Button fx:id="load" layoutX="14.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleLoadRequest" prefHeight="38.0" prefWidth="181.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Load Latest Request" textFill="WHITE">
                <font>
                   <Font name="Eras Bold ITC" size="15.0" />
                </font>

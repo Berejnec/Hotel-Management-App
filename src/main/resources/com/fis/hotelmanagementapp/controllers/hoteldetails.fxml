@@ -16,7 +16,7 @@
             <Font name="Eras Bold ITC" size="45.0" />
          </font>
       </Label>
-      <Button layoutX="528.0" layoutY="638.0" mnemonicParsing="false" onAction="#initializeTextAreas" prefHeight="55.0" prefWidth="166.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Load Hotel Details" textFill="WHITE">
+      <Button fx:id="load" layoutX="528.0" layoutY="638.0" mnemonicParsing="false" onAction="#initializeTextAreas" prefHeight="55.0" prefWidth="166.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Load Hotel Details" textFill="WHITE">
          <font>
             <Font name="Eras Bold ITC" size="15.0" />
          </font>
@@ -59,7 +59,7 @@
             <Font name="Eras Bold ITC" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="703.0" layoutY="638.0" mnemonicParsing="false" onAction="#updateHotelDetails" prefHeight="55.0" prefWidth="185.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Update Hotel Details" textAlignment="CENTER" textFill="WHITE">
+      <Button fx:id="update" layoutX="703.0" layoutY="638.0" mnemonicParsing="false" onAction="#updateHotelDetails" prefHeight="55.0" prefWidth="185.0" style="-fx-background-color: #b8d0eb; -fx-border-color: black; -fx-border-radius: 5px; -fx-border-width: 3px;" text="Update Hotel Details" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="Eras Bold ITC" size="15.0" />
          </font>
