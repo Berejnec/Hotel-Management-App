@@ -1,5 +1,6 @@
-package com.fis.hotelmanagementapp;
+package com.fis.hotelmanagementapp.controllers;
 
+import com.fis.hotelmanagementapp.HelloApplication;
 import com.fis.hotelmanagementapp.controllers.LoginController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
