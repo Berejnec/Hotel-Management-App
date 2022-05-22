@@ -30,6 +30,7 @@ public class HotelPageAdminController {
         Stage hotelStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("hoteldetails.fxml"));
         Scene scene = new Scene(root);
+        hotelStage.setTitle("Edit Details");
         hotelStage.setScene(scene);
         hotelStage.show();
     }
@@ -40,6 +41,7 @@ public class HotelPageAdminController {
         Stage rooms = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("managerooms.fxml"));
         Scene scene = new Scene(root);
+        rooms.setTitle("Manage Rooms");
         rooms.setScene(scene);
         rooms.show();
     }
@@ -50,6 +52,7 @@ public class HotelPageAdminController {
         Stage requests = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("reservationrequests.fxml"));
         Scene scene = new Scene(root);
+        requests.setTitle("Reservation Requests");
         requests.setScene(scene);
         requests.show();
     }
@@ -60,6 +63,7 @@ public class HotelPageAdminController {
         Stage home = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("startup.fxml"));
         Scene scene = new Scene(root);
+        home.setTitle("Luxos Resorts");
         home.setScene(scene);
         home.show();
 

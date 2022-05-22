@@ -31,6 +31,7 @@ public class StartUpController {
         Stage register = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("registerchoose.fxml"));
         Scene scene = new Scene(root);
+        register.setTitle("Register choose");
         register.setScene(scene);
         register.show();
     }
@@ -40,6 +41,7 @@ public class StartUpController {
         Stage login = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene scene = new Scene(root);
+        login.setTitle("Login page");
         login.setScene(scene);
         login.show();
     }

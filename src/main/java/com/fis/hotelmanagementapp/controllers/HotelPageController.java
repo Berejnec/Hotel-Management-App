@@ -32,6 +32,7 @@ public class HotelPageController {
         Stage hotelStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("viewhoteldetails.fxml"));
         Scene scene = new Scene(root);
+        hotelStage.setTitle("Hotel Details");
         hotelStage.setScene(scene);
         hotelStage.show();
     }
@@ -42,6 +43,7 @@ public class HotelPageController {
         Stage hotelStage = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("reserveroom.fxml"));
         Scene scene = new Scene(root);
+        hotelStage.setTitle("Reserve Room");
         hotelStage.setScene(scene);
         hotelStage.show();
     }
@@ -53,6 +55,7 @@ public class HotelPageController {
         Parent root = FXMLLoader.load(getClass().getResource("ratehotel.fxml"));
         Scene scene = new Scene(root);
         hotelStage.setScene(scene);
+        hotelStage.setTitle("Rate Hotel");
         hotelStage.show();
     }
 
@@ -62,6 +65,7 @@ public class HotelPageController {
         Stage home = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("startup.fxml"));
         Scene scene = new Scene(root);
+        home.setTitle("Luxos Resorts");
         home.setScene(scene);
         home.show();
 
