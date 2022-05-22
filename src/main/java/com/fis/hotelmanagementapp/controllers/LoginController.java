@@ -116,6 +116,7 @@ public class LoginController implements Initializable {
         Stage register = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("registerchoose.fxml"));
         Scene scene = new Scene(root);
+        register.setTitle("Register Page");
         register.setScene(scene);
         register.show();
 

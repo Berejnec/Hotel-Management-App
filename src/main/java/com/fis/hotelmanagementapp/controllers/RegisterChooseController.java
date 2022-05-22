@@ -21,6 +21,7 @@ public class RegisterChooseController {
         Stage registerClient = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("registerclient.fxml"));
         Scene scene = new Scene(root);
+        registerClient.setTitle("Client Registration");
         registerClient.setScene(scene);
         registerClient.show();
     }
@@ -30,6 +31,7 @@ public class RegisterChooseController {
         Stage registerAdmin = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("registeradmin.fxml"));
         Scene scene = new Scene(root);
+        registerAdmin.setTitle("Admin Registration");
         registerAdmin.setScene(scene);
         registerAdmin.show();
     }

@@ -1,5 +1,6 @@
-package com.fis.hotelmanagementapp;
+package com.fis.hotelmanagementapp.controllers;
 
+import com.fis.hotelmanagementapp.HelloApplication;
 import com.fis.hotelmanagementapp.controllers.LoginController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -8,10 +9,12 @@ import javafx.stage.Stage;
 import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.testfx.api.FxAssert;
 import org.testfx.api.FxRobot;
 import org.testfx.framework.junit5.ApplicationExtension;
 import org.testfx.framework.junit5.ApplicationTest;
 import org.testfx.framework.junit5.Start;
+import org.testfx.matcher.base.WindowMatchers;
 
 @ExtendWith(ApplicationExtension.class)
 class LoginControllerTest extends ApplicationTest {
@@ -40,6 +43,12 @@ class LoginControllerTest extends ApplicationTest {
         fxRobot.clickOn("#password");
         fxRobot.write(password);
         fxRobot.clickOn("#loginButton");
+    }
+
+    @Test
+    public void registerButtonTest(FxRobot fxRobot){
+        fxRobot.clickOn("#registerpage");
+        FxAssert.verifyThat(window("Register Page"), WindowMatchers.isShowing());
     }
 
 }

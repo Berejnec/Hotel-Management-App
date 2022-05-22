@@ -123,6 +123,7 @@ public class RegisterClientController implements Initializable {
         Stage home = new Stage();
         Parent root = FXMLLoader.load(getClass().getResource("startup.fxml"));
         Scene scene = new Scene(root);
+        home.setTitle("Luxos Resorts");
         home.setScene(scene);
         home.show();
 

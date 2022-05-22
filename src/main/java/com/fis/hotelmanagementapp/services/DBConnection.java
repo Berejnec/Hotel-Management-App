@@ -10,7 +10,7 @@ public class DBConnection {
 
     private String username = "root";
 
-    private String password = "29berejnec01";
+    private String password = "administrator";
 
     public Connection getConnection() {
         try {

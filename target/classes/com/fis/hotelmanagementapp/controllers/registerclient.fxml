@@ -37,7 +37,7 @@
       </ImageView>
       <ImageView fitHeight="45.0" fitWidth="38.0" layoutX="242.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../icons/key%20(1).png" />
+            <Image url="@../../../../icons/golden_key.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="43.0" fitWidth="38.0" layoutX="242.0" layoutY="183.0" pickOnBounds="true" preserveRatio="true">
